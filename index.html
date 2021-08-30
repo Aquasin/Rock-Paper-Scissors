@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="index.css" />
+		<title>Rock Paper Scissor using VueJS</title>
+	</head>
+
+	<body>
+		<div class="container-xxl">
+			<div id="app">
+				<div class="row text-center bg-dark text-light p-3">
+					<h1>Welcome to Rock Paper Scissors</h1>
+				</div>
+				<div class="row text-center bg-dark">
+					<div class="col align-self-center p-3 mb-3">
+						<button
+							type="button"
+							class="btn btn-danger"
+							v-on:click="reset()"
+						>
+							Reset
+						</button>
+					</div>
+				</div>
+				<div class="row justify-content-center mt-2 p-3 fs-3">
+					<div class="col-5 text-center text-uppercase">
+						<p>Computer : {{computerScore}}</p>
+					</div>
+					<div class="col-5 text-center text-uppercase">
+						<p>Player : {{playerScore}}</p>
+					</div>
+				</div>
+				<div class="row text-center justify-content-center">
+					<div class="col-3 align-self-center p-3">
+						<button
+							type="button"
+							class="btn btn-primary btn-lg"
+							v-on:click="playResult(0)"
+							id="rock"
+						>
+							Rock
+						</button>
+					</div>
+					<div class="col-3 align-self-center p-3">
+						<button
+							type="button"
+							class="btn btn-success btn-lg"
+							v-on:click="playResult(1)"
+							id="paper"
+						>
+							Paper
+						</button>
+					</div>
+					<div class="col-3 align-self-center p-3">
+						<button
+							type="button"
+							class="btn btn-warning btn-lg text-light"
+							v-on:click="playResult(2)"
+							id="scissors"
+						>
+							Scissors
+						</button>
+					</div>
+				</div>
+				<div class="row text-center flex-column">
+					<div
+						class="col align-self-center p-1 m-1"
+						v-for="message in messages"
+					>
+						{{message}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://unpkg.com/vue@3.0.5"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+			crossorigin="anonymous"
+		></script>
+		<script src="index.js"></script>
+	</body>
+</html>
